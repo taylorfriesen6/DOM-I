@@ -40,3 +40,54 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//nav bar link updates
+const allNav = document.querySelectorAll("nav > a");
+for (let i = 0; i < 6; i++) {
+  allNav[i].textContent = siteContent.nav[`nav-item-${i+1}`];
+}
+
+//cta updates
+document.querySelector(".cta-text > h1").textContent = siteContent.cta.h1;
+document.querySelector(".cta-text > button").textContent = siteContent.cta.button;
+document.querySelector("#cta-img").setAttribute("src", siteContent.cta["img-src"]);
+
+//main section updates
+const allTextContent = document.querySelectorAll(".text-content");
+allTextContent[0].children[0].textContent = siteContent["main-content"]["features-h4"];
+allTextContent[0].children[1].textContent = siteContent["main-content"]["features-content"];
+allTextContent[1].children[0].textContent = siteContent["main-content"]["about-h4"];
+allTextContent[1].children[1].textContent = siteContent["main-content"]["about-content"];
+allTextContent[2].children[0].textContent = siteContent["main-content"]["services-h4"];
+allTextContent[2].children[1].textContent = siteContent["main-content"]["services-content"];
+allTextContent[3].children[0].textContent = siteContent["main-content"]["product-h4"];
+allTextContent[3].children[1].textContent = siteContent["main-content"]["product-content"];
+allTextContent[4].children[0].textContent = siteContent["main-content"]["vision-h4"];
+allTextContent[4].children[1].textContent = siteContent["main-content"]["vision-content"];
+document.querySelector(".middle-img").setAttribute("src",siteContent["main-content"]["middle-img-src"]);
+
+// contact updates
+document.querySelector(".contact > h4").textContent = siteContent["contact"]["contact-h4"];
+const contactParagraphs = document.querySelectorAll(".contact > p");
+contactParagraphs[0].textContent = siteContent.contact.address;
+contactParagraphs[1].textContent = siteContent.contact.phone;
+contactParagraphs[2].textContent = siteContent.contact.email;
+
+
+// footer updates
+document.querySelector("footer > p").textContent = siteContent.footer.copyright;
+
+
+allNav.forEach(node => node.style.color = "green");
+
+leftLink = document.createElement("a");
+leftLink.textContent = "Left Link";
+leftLink.setAttribute("src", "#");
+leftLink.style.color = "green";
+document.querySelector("nav").prepend(leftLink);
+
+rightLink = document.createElement("a");
+rightLink.textContent = "Right Link";
+rightLink.setAttribute("src", "#");
+rightLink.style.color = "green";
+document.querySelector("nav").append(rightLink);
