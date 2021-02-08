@@ -41,7 +41,14 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+//nav bar link updates
 const allNav = document.querySelectorAll("nav > *");
 for (let i = 0; i < 6; i++) {
   allNav[i].textContent = siteContent.nav[`nav-item-${i+1}`];
 }
+
+//cta updates
+document.querySelector(".cta-text > h1").textContent = siteContent.cta.h1;
+document.querySelector(".cta-text > button").textContent = siteContent.cta.button;
+document.querySelector("#cta-img").setAttribute("src", siteContent.cta["img-src"]);
+
