@@ -52,3 +52,18 @@ document.querySelector(".cta-text > h1").textContent = siteContent.cta.h1;
 document.querySelector(".cta-text > button").textContent = siteContent.cta.button;
 document.querySelector("#cta-img").setAttribute("src", siteContent.cta["img-src"]);
 
+//main section updates
+const allTextContent = document.querySelectorAll(".text-content");
+allTextContent[0].children[0].textContent = siteContent["main-content"]["features-h4"];
+allTextContent[0].children[1].textContent = siteContent["main-content"]["features-content"];
+allTextContent[1].children[0].textContent = siteContent["main-content"]["about-h4"];
+allTextContent[1].children[1].textContent = siteContent["main-content"]["about-content"];
+allTextContent[2].children[0].textContent = siteContent["main-content"]["services-h4"];
+allTextContent[2].children[1].textContent = siteContent["main-content"]["services-content"];
+allTextContent[3].children[0].textContent = siteContent["main-content"]["product-h4"];
+allTextContent[3].children[1].textContent = siteContent["main-content"]["product-content"];
+allTextContent[4].children[0].textContent = siteContent["main-content"]["vision-h4"];
+allTextContent[4].children[1].textContent = siteContent["main-content"]["vision-content"];
+document.querySelector(".middle-img").setAttribute(
+        "src",siteContent["main-content"]["middle-img-src"]);
+
