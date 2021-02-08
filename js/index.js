@@ -42,7 +42,7 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //nav bar link updates
-const allNav = document.querySelectorAll("nav > *");
+const allNav = document.querySelectorAll("nav > a");
 for (let i = 0; i < 6; i++) {
   allNav[i].textContent = siteContent.nav[`nav-item-${i+1}`];
 }
@@ -76,3 +76,18 @@ contactParagraphs[2].textContent = siteContent.contact.email;
 
 // footer updates
 document.querySelector("footer > p").textContent = siteContent.footer.copyright;
+
+
+allNav.forEach(node => node.style.color = "green");
+
+leftLink = document.createElement("a");
+leftLink.textContent = "Left Link";
+leftLink.setAttribute("src", "#");
+leftLink.style.color = "green";
+document.querySelector("nav").prepend(leftLink);
+
+rightLink = document.createElement("a");
+rightLink.textContent = "Right Link";
+rightLink.setAttribute("src", "#");
+rightLink.style.color = "green";
+document.querySelector("nav").append(rightLink);
